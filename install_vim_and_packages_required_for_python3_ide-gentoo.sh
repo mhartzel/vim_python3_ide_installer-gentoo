@@ -80,7 +80,7 @@ echo
 echo "Removing vim packages..."
 echo "--------------------------------------------------------------------------------"
 VIM_PATH=`which vim`
-emerge -C app-editors/vim app-editors/vim-core
+emerge -C app-editors/vim app-editors/vim-core app-vim/pathogen app-vim/tagbar app-vim/syntastic app-vim/supertab
 if [ -e "$VIM_PATH" ] ; then rm -rf "$VIM_PATH" ; fi
 echo
 echo "Removing old vim config files..."
