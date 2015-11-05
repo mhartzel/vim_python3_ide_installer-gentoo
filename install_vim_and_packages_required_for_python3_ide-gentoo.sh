@@ -112,6 +112,7 @@ echo "--------------------------------------------------------------------------
 cd $HOME_DIRECTORY
 rm -rf vim
 git clone https://github.com/vim/vim.git
+if [ "$?" != "0" ] ; then echo "Error downloading vim source from git repository" ; exit ; fi
 cd vim
 git pull
 cd src

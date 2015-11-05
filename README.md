@@ -58,9 +58,9 @@ After installation fire up urxvt and start vim in it :)
 
 ### Requirements: Gentoo Linux
 
-> git clone https://github.com/mhartzel/vim_python3_ide_installer.git
+> git clone https://github.com/mhartzel/vim_python3_ide_installer-gentoo.git
 
-> cd vim_python3_ide_installer
+> cd vim_python3_ide_installer-gentoo
 
 > ./install_vim_and_packages_required_for_python3_ide.sh
 
