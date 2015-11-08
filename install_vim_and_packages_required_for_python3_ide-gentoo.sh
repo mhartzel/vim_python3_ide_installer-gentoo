@@ -561,12 +561,33 @@ END_OF_FILE
 
 chown $REAL_USER_NAME:$REAL_USER_NAME .xsession
 
-
 echo
 echo "Installation is ready :)"
 echo
 echo "You must restart X for urxvt - terminal changes to take effect or execute the command: xrdb -merge ~/.Xresources"
 echo "-----------------------------------------------------------------------------------------------------------------"
+echo
+
+VIM_PORTAGE_FLAGS=`grep -R vim /etc/portage/package.use`
+if [ "$VIM_PORTAGE_FLAGS" ] ; then 
+	echo
+	echo "Warning !!!!!!!"
+	echo
+	echo "It seems you have some gentoo use flags pointing to vim."
+	echo "Flags like 'vim-syntax' might pull in gentoo version of vim and gentoo specific"
+	echo "vim customizations on the next system update, messing up your vim installation."
+	echo "One way to test if this is the case, is to give the following update command"
+	echo "and check if vim is on the list of packages to install."
+	echo "If it is, edit your use flags and test again until gentoo no longer tries to install vim:"
+	echo
+	echo "emerge --ask --update --pretend --changed-use --deep --with-bdeps=y @world"
+	echo
+	echo "Below is the list of keyword 'vim' found in your /etc/portage/package.use"
+	echo
+	grep -R --color vim /etc/portage/package.use
+	echo
+fi
+
 echo
 echo "As an additional step I can copy vim settings also to the user root"
 echo "This lets you have vim configured correctly when you use sudo or do something as root"
@@ -583,9 +604,7 @@ mkdir -p /root/.vim
 cp -r .vim/ /root/
 cp .vimrc /root/
 
-
 echo
 echo "Settings copied :)"
 echo
-
 
