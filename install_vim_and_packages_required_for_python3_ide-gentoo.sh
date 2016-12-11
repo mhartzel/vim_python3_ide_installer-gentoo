@@ -547,6 +547,9 @@ URxvt*scrollWithBuffer: true
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
 
+URxvt.keysym.Shift-Control-F11: command:\033]50;xft:Terminus:pixelsize=12\007
+URxvt.keysym.Shift-Control-F12: command:\033]50;xft:Terminus:pixelsize=14\007 
+
 
 END_OF_FILE
 
