@@ -522,7 +522,7 @@ cat > .Xresources << 'END_OF_FILE'
 
 ! General urxvt config
 URxvt*saveLines:         65535
-URxvt*font: xft:Terminus:pixelsize=14
+URxvt*font: xft:xos4 Terminus:pixelsize=14:encoding=combined
 
 ! Configure urxvt to always open in tabbed mode and to use a clipboard
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
