@@ -418,6 +418,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" ctrl + a and ctrl + x increments character / number under cursor
+set nrformats=alpha
+
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set noswapfile
@@ -500,6 +503,9 @@ let g:syntastic_auto_loc_list = 1
 " Configure Syntastic to use pyflakes for Python syntax checking
 let g:syntastic_python_checkers = ["pyflakes"]
 
+" Configure Syntastic Go syntax checker
+let g:syntastic_go_checkers = ["gotype"]
+
 " Configure Supertab to complete python3 commands when pressing TAB and showing description of commands in a window.
 au FileType python set omnifunc=python3complete#Complete
 let g:SuperTabDefaultCompletionType = "context"
@@ -509,6 +515,10 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " Colorscheme
 set background=dark
 colorscheme aldmeris
+
+" Change statusline color in Insertmode
+au InsertEnter * hi StatusLine ctermfg=2 ctermbg=0 cterm=reverse,bold
+au InsertLeave * hi StatusLine ctermfg=NONE ctermbg=NONE cterm=reverse,bold
 
 " Vim 7.4 changed how identing works, force the old behaviour to always use tabs with width 8.
 set tabstop=8
