@@ -2,6 +2,7 @@
 
 This is my shell script to install vim and other packages so that I can use vim as my Python3 and C development environment.
 
+### This version of the install script is no longer maintained, since I don't use Gentoo anymore
 ### This version of the install script is for Gentoo Linux.
 
 Debian / Ubuntu install script can be found here: https://github.com/mhartzel/vim_python3_ide_installer 
